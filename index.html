@@ -14,82 +14,48 @@
       <button id="lang-switch">EN</button>
     </nav>
   </header>
-
   <main>
     <section class="product-list">
       <article class="product">
-        <img src="placeholder.jpg" alt="Duft 1" />
-        <h2>Parfumname 1</h2>
-        <p class="description">Ein eleganter Duft mit geheimnisvollen Noten...</p>
-        <button onclick="openProduct('1')">Jetzt ansehen</button>
+        <img src="baccarat.jpg" alt="Baccarat Rouge" />
+        <h2>Baccarat Rouge</h2>
+        <p class="description">Ein sinnlich-orientalischer Duft mit einer Note von Luxus und Magie.</p>
+        <button onclick="openProduct('baccarat')">Jetzt ansehen</button>
+      </article>
+      <article class="product">
+        <img src="xerjoff.jpg" alt="Xerjoff Alexandria II" />
+        <h2>Xerjoff Alexandria II</h2>
+        <p class="description">Ein majestätischer Duft, warm, edel und unvergesslich.</p>
+        <button onclick="openProduct('xerjoff')">Jetzt ansehen</button>
       </article>
     </section>
-
     <section id="product-detail" class="hidden">
       <button onclick="closeProduct()">&larr; Zurück</button>
-      <h2>Parfumname 1</h2>
-      <img src="placeholder.jpg" alt="Parfum Detail" />
-      <p>Beschreibung des Duftes (Platzhalter)</p>
-
+      <h2 id="detail-title"></h2>
+      <img id="detail-image" src="" alt="Parfum Detail" />
+      <p id="detail-description"></p>
       <label for="volume">Größe wählen:</label>
       <select id="volume">
-        <option value="15">15 ml – 24 €</option>
-        <option value="50">50 ml – 59 €</option>
+        <option value="15">15 ml – <span id="price15"></span> €</option>
+        <option value="50">50 ml – <span id="price50"></span> €</option>
       </select>
-
-      <button onclick="goToCheckout()">Jetzt kaufen mit PayPal</button>
+      <button onclick="goToCheckout()">Mit PayPal kaufen</button>
     </section>
-
     <section id="checkout" class="hidden">
       <h2>Checkout</h2>
       <form id="checkout-form">
         <label for="name">Name</label>
         <input type="text" id="name" required />
-
         <label for="email">E-Mail</label>
         <input type="email" id="email" required />
-
         <label for="phone">Telefonnummer</label>
         <input type="tel" id="phone" required />
-
         <label for="address">Adresse</label>
         <textarea id="address" required></textarea>
-
         <button type="submit">Mit PayPal bezahlen</button>
       </form>
     </section>
-
-    <section id="admin-login" class="hidden">
-      <h2>Admin-Login</h2>
-      <form id="login-form">
-        <label for="admin-email">Admin-E-Mail</label>
-        <input type="email" id="admin-email" required />
-
-        <label for="admin-password">Passwort</label>
-        <input type="password" id="admin-password" required />
-
-        <button type="submit">Login</button>
-      </form>
-    </section>
-
-    <section id="admin-panel" class="hidden">
-      <h2>Bestellungen verwalten</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Bestell-ID</th>
-            <th>Kunde</th>
-            <th>Produkt</th>
-            <th>Status</th>
-            <th>Aktion</th>
-          </tr>
-        </thead>
-        <tbody id="order-list">
-        </tbody>
-      </table>
-    </section>
   </main>
-
   <footer>
     <p>&copy; Matt Fragrantiae – Elegante Düfte aus Leidenschaft</p>
   </footer>
